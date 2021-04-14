@@ -7,6 +7,7 @@ mkdir sstool
 cd sstool
 git clone https://github.com/QV-dev/TuxTool
 cd TuxTool
+cd TuxTool
 sudo bash tuxtool.sh
 ```
 then, wait, and the results for the screenshare tool will show. 
