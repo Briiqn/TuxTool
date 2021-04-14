@@ -23,7 +23,6 @@ TimeChangerCheck1=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 29284)
 TimeChangerCheck2=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 14548)
 RavenB2Check1=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 118223)
 RavenB2Check2=$(ls -s /home/$CurrentUser/.minecraft/mods | grep 116)
-#RavenB2Check3=$(ls -a /home/$CurrentUser/.minecraft/mods | grep '[1.8.9] KeystrokesMod v4.jar')
 RavenB1Check=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 54620)
 GucciClientCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 55628)
 SumoClientCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 149553)
@@ -54,9 +53,6 @@ echo -e User has been caught using Raven B2 \(Check A\) >> /tmp/scanresults.txt
 fi
 if [ -z !$RavenB2Check2 ]; then
 echo -e User has been caught using Raven B2 \(Check B\) >> /tmp/scanresults.txt
-fi
-if [ -z !$RavenB2Check3 ]; then
-echo -e User has been caught using Raven B2 \(Check C\) >> /tmp/scanresults.txt
 fi
 if [ -z !$RavenB1Check ]; then
 echo -e User has been caught using Raven B1 \(Check A\) >> /tmp/scanresults.txt
