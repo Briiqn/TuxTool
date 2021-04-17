@@ -22,11 +22,14 @@ vboxBiosVersion=$(sudo dmidecode | grep VBOX)
 vboxBiosDate=$(sudo dmidecode | grep "06/23/99")
 vboxDriverCheck=$(sudo lsmod | grep vbox)
 VMwareDriverCheck=$(sudo lsmod | grep vmware)
-vboxMacCheck=$(sudo ifconfig -a | grep 08:00:27)
-VMwareMacCheck0=$(sudo ifconfig -a | grep 00:05:69)
-VMWareMacCheck1=$(sudo ifconfig -a | grep 00:0C:29)
-VMWareMacCheck2=$(sudo ifconfig -a | grep 00:1C:14)
-VMWareMacCheck3=$(sudo ifconfig -a | grep 00:50:56)
+vboxMacCheck=$(sudo ifconfig -a | grep 08:00:)
+VMwareMacCheck0=$(sudo ifconfig -a | grep 00:05:)
+VMWareMacCheck1=$(sudo ifconfig -a | grep 00:0C:)
+VMWareMacCheck2=$(sudo ifconfig -a | grep 00:1C:)
+VMWareMacCheck3=$(sudo ifconfig -a | grep 00:50:)
+GeneralCPUCheck=$(sudo cat /proc/cpuinfo | grep hypervisor)
+RealAMDCheck=$(cat /proc/cpuinfo | grep -i AMD)
+AMDAuth=$(cat /proc/cpuinfo | grep -i AuthenticAMD)
 if [ -z !$VMwaresysname ]; then
 echo -e User has been detected for using a virtual machine 1A >> /tmp/scanresults.txt
 fi
@@ -40,29 +43,56 @@ if [ -z !$Vboxsysname2 ]; then
 echo -e User has been detected for using a virtual machine 2B >> /tmp/scanresults.txt
 fi
 if [ -z !$VMwareAdapter ]; then
-echo -e User has been detected for using a virtual machine 3A >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 1C >> /tmp/scanresults.txt
 fi
 if [ -z !$vboxBiosVersion ]; then
-echo -e User has been detected for using a virtual machine 4A >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 2C >> /tmp/scanresults.txt
 fi
 if [ -z !$vboxDriverCheck ]; then
-echo -e User has been detected for using a virtual machine 5A >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 2D >> /tmp/scanresults.txt
 fi
 if [ -z !$VMwareDriverCheck ]; then 
-echo -e User has been detected for using a virtual machine 5B >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 1D >> /tmp/scanresults.txt
 fi
 if [ -z !$vboxMacCheck ]; then
-echo -e User has been detected for using a virtual machine 6A >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 4A >> /tmp/scanresults.txt
 fi
 if [ -z !$VMwareMacCheck0 ]; then
-echo -e User has been detected for using a virtual machine 6B >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 3A >> /tmp/scanresults.txt
 fi
 if [ -z !$VMwareMacCheck1 ]; then
-echo -e User has been detected for using a virtual machine 6C >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 3B >> /tmp/scanresults.txt
 fi
 if [ -z !$VMwareMacCheck2 ]; then
-echo -e User has been detected for using a virtual machine 6D >> /tmp/scanresults.txt
+echo -e User has been detected for using a virtual machine 3C >> /tmp/scanresults.txt
 fi
 if [ -z !$VMwareMacCheck3 ]; then
+echo -e User has been detected for using a virtual machine 3D >> /tmp/scanresults.txt
+fi
+if [ -z !$GeneralCPUCheck ]; then
+echo -e User has been detected for using a virtual machine 5A >> /tmp/scanresults.txt
+fi
+if dmidecode | grep 'Microsoft'; then
+echo -e User has been detected for using a virtual machine 5B >> /tmp/scanresults.txt
+fi
+if [ -z !$vboxBiosDate ]; then 
+echo -e User has been detected for using a virtual machine 2E >> /tmp/scanresults.txt
+fi
+if [ -f /proc/xen/privcmd ]; then
+echo -e User has been detected for using a virtual machine 6A >> /tmp/scanresults.txt
+elif [ -f /proc/xen/capabilities ]; then 
+echo -e User has been detected for using a virtual machine 6B >> /tmp/scanresults.txt
+fi
+if grep 'QEMU' /proc/cpuinfo; then
+echo -e User has been detected for using a virtual machine 6C >> /tmp/scanresults.txt
+fi
+if dmidecode | grep 'bochs'; then
+echo -e User has been detected for using a virtual machine 6D >> /tmp/scanresults.txt 
+elif cat /proc/cpuinfo | grep 'AMD' | grep -i 'processor'; then
 echo -e User has been detected for using a virtual machine 6E >> /tmp/scanresults.txt
+elif cat /proc/cpuinfo | grep 'Intel(R) Pentium(R) 4 CPU'; then
+echo -e User has been detected for using a virtual machine 6F >> /tmp/scanresults.txt
+fi
+if [[ -z !$RealAMDCheck ]] && [[ -z $AMDAuth ]]; then
+echo -e User has been detected for using a virtual machine 7A 
 fi
