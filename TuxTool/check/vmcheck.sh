@@ -48,9 +48,7 @@ fi
 if [ -z !$vboxBiosVersion ]; then
 echo -e User has been detected for using a virtual machine 2C >> /tmp/scanresults.txt
 fi
-if [ -z !$vboxDriverCheck ]; then
-echo -e User has been detected for using a virtual machine 2D >> /tmp/scanresults.txt
-fi
+
 if [ -z !$VMwareDriverCheck ]; then 
 echo -e User has been detected for using a virtual machine 1D >> /tmp/scanresults.txt
 fi
@@ -85,13 +83,6 @@ echo -e User has been detected for using a virtual machine 6B >> /tmp/scanresult
 fi
 if grep 'QEMU' /proc/cpuinfo; then
 echo -e User has been detected for using a virtual machine 6C >> /tmp/scanresults.txt
-fi
-if dmidecode | grep 'bochs'; then
-echo -e User has been detected for using a virtual machine 6D >> /tmp/scanresults.txt 
-elif cat /proc/cpuinfo | grep 'AMD' | grep -i 'processor'; then
-echo -e User has been detected for using a virtual machine 6E >> /tmp/scanresults.txt
-elif cat /proc/cpuinfo | grep 'Intel(R) Pentium(R) 4 CPU'; then
-echo -e User has been detected for using a virtual machine 6F >> /tmp/scanresults.txt
 fi
 if [[ -z !$RealAMDCheck ]] && [[ -z $AMDAuth ]]; then
 echo -e User has been detected for using a virtual machine 7A 
