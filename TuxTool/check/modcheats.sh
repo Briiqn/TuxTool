@@ -13,121 +13,74 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with TuxTool.  If not, see <https://www.gnu.org/licenses/>.
-CurrentUser=$(users)
-ExplicitB9Check=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 476303)
-FenixCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 945117)
-GhostSenseCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 232737)
-NebulaCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 705585)
-BapeCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 1489573)
-TimeChangerCheck1=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 29284)
-TimeChangerCheck2=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 14548)
-RavenB2Check1=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 118223)
-RavenB2Check2=$(ls  -s /home/$CurrentUser/.minecraft/mods | grep 116)
-RavenB1Check=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 54620)
-GucciClientCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 55628)
-SumoClientCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 149553)
-IncognitoCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 8674753)
-LowkeyCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 770390)
-OnycCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 149594)
-SakeCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 588131)
-SkilledCheck=$(ls  -ls /home/$CurrentUser/.minecraft/mods | grep 251173)
-SkilledB1Check=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 239784)
-ReachModCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 4631)
-ReachModCheck2=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 5996)
-AzuryaCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 69653)
-RemoveHitDelay=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 7179)
-ButterflyMod=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 3785)
-GhostClient=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 236695)
-LiquidBounce=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 7245326)
-SativaCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 951771)
-UboaCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 221595)
-VeneCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 291968)
-WillyCheck=$(ls -ls /home/$CurrentUser/.minecraft/mods | grep 3461783)
+CurrentUser=$USER
+Sha256Check=$(sha256sum /home/$USER/.minecraft/mods/* /home/$USER/.minecraft/mods/*/*)
+echo $Sha256Check >> /tmp/TuxTool$RANDOM.tmp
 # checks for all the popular mod cheats like raven, explicit, bape, etc. Can be easily bypassed, will be improved upon.
-if [[ $ExplicitB9Check == *'476303'* ]]; then
-echo -e User has been caught using Explicit \(Check A\) >> /tmp/scanresults.txt
+if grep -q "af0cf1f38f6ad0cb9b22a3ebe8560f323112947f3232e09b41c00626db8aaf86" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using LiquidBounce B72 \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $FenixCheck == *'945117'* ]]; then
-echo -e User has been caught using Fenix \(Check A\) >> /tmp/scanresults.txt
+if grep -q "320ec3ef32f50693fea5d821491fb60c18cf94524c7be99ac60b535a3c13bcfe" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Raven B+ v.1.0.16 \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $GhostSenseCheck == *'232737'* ]]; then
-echo -e User has been caught using Ghost Sense \(Check A\) >> /tmp/scanresults.txt 
+if grep -q "03f069fa7fcd395492088329ceda11bacc666612979882704982c97073034163" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Raven B+ Experimental \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $NebulaCheck == *'705585'* ]]; then
-echo -e User has been caught using Nebula God Client \(Check A\) >> /tmp/scanresults.txt
+if grep -q "59c1f741f198c68cb70f94630fa36739f6106c7a06eb2a04514feb2c84ef6ad6" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Raven B+ Beta \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $BapeCheck == '*1489573'* ]]; then
-echo -e User has been caught using Bape or Cracked vape \(Check A\)
+if grep -q "30023ad5e824d2f17c3724b488b66d1afbf4bdf191fc453f61fe4b0ec4a91eb5" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Vape Crack "(Fake)" \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $TimeChangerCheck1 == *'29284'* ]]; then
-echo -e User has been caught using TimeChanger client \(Check A\) >> /tmp/scanresults.txt
+if grep -q "761576f9445ef431171e0eb6d08d9989f2a7f40184a35605801336eea257b3c1" /tmp/TuxTool*.tmp; then
+echo -e User is using NoHitDelay, May be a Cheat \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $TimeChangerCheck2 == *'14548'* ]]; then
-echo -e User has been caught using TimeChanger client \(Check B\) >> /tmp/scanresults.txt
+if grep -q "0c495411826534916323ace825e0e734ac6e5ddc643276c834db7de54f2ab091" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Skidp "(FDP Client)" \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $RavenB2Check1 == *'118223'* ]]; then
-echo -e User has been caught using Raven B2 \(Check A\) >> /tmp/scanresults.txt
+if grep -q "99781fa9716552e2abad20304f39d673fa530c941928b104e17df8d94ae31673" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Old Raven B+ \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $RavenB2Check2 == *'116'* ]]; then
-echo -e User has been caught using Raven B2 \(Check B\) >> /tmp/scanresults.txt
+if grep -q "e447a0a259f90d7b2fe918fad190b29b506bc59f15e41dd8475326c099399783" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Skilled V3 \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $RavenB1Check == *'54620'* ]]; then
-echo -e User has been caught using Raven B1 \(Check A\) >> /tmp/scanresults.txt
+if grep -q "057fea175bc72640196b17dc35431e74bbc5b4757812b78f692af9007717ce10" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Explicit B9 Type A \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $GucciClientCheck == *'55628'* ]]; then
-echo -e User has been caught using Gucci Client \(Check A\) >> /tmp/scanresults.txt
+if grep -q "9caf3b1ebb212de31709fe64f4ab0b59634c663f3e7434682440ff5895d01dbb" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Explicit B9 Type B \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $SumoClientCheck == *'149553'* ]]; then
-echo -e User has been caught using Gucci Client \(Check A\) >> /tmp/scanresults.txt
+if grep -q "0390ae40f4763bec2a0c77452e096adad1289d1a5e94c3ad2156d6c815755caf" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Explicit B9 Type C \(Check A\) >> /tmp/scanresults.txt
+else
+echo nothing found
 fi
-if [[ $IncognitoCheck == *'8674753'* ]]; then
-echo -e User has been caught using Incognito Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $LowkeyCheck == *'770390'* ]]; then
-echo -e User has been caught using Incognito Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $OnycCheck == *'149594'* ]]; then
-echo -e User has been caught using Onyx Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $SakeCheck == *'588131'* ]]; then
-echo -e User has been caught using Sake Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $SkilledCheck == *'251173'* ]];then
-echo -e User has been caught using Skilled B2 \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $SkilledB1Check == *'239784'* ]]; then
-echo -e User has been caught using Skilled B1 \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $ReachModCheck == *"4631"* ]]; then
-echo -e User has been caught using a reach mod \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $ReachModCheck2 == *'5996'* ]]; then
-echo -e User has been caught using a reach mod \(Check B\) >> /tmp/scanresults.txt
-fi
-if [[ $AzuryaCheck == *'69653'* ]]; then
-echo -e User has been caught using Azurya Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $RemoveHitDelay == *'7179'* ]]; then
-echo -e User has been caught using a mod that removes the 1.8.9 hit delay. >> /tmp/scanresults.txt
-fi
-if [[ $ButterflyMod == *'3785'* ]]; then
-echo -e User has been caught using a mod that simulates butterfly clicks \(BANNABLE\) >> /tmp/scanresults.txt
-fi
-if [[ $GhostClient == *'236695'* ]]; then
-echo -e User has been caught using a generic Ghost Client \( Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $LiquidBounce == *'7245326'* ]]; then
-echo -e User is using LiquidBounce \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $SativaCheck == *'951771'* ]]; then
-echo -e User has been caught using Sativa Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $UboaCheck == *'221595'* ]]; then
-echo -e User has been caught using Uboa Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $VeneCheck == *'291968'* ]]; then
-echo -e User has been caught using Vene Client \(Check A\) >> /tmp/scanresults.txt
-fi
-if [[ $WillyCheck == *'3461783'* ]]; then
-echo -e User has been caught using Willy Client \(haha funny name\) >> /tmp/scanresults.txt
+if grep -q "b6ddf8cd68d0c130183f192a751610a91d05a966050052fcf18a375d1eb1e5db" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using GhostSense \(Check A\) >> /tmp/scanresults.txt
+rm /tmp/TuxTool*.tmp
+else
+echo nothing found
+rm /tmp/TuxTool*.tmp
 fi
