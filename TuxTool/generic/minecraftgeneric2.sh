@@ -16,6 +16,6 @@
 ProcessCheck=$(ps -ef | grep 'java' | grep 'minecraft' | sort -g | sed -r 's/^([^.]+).*$/\1/; s/^[^0-9]*([0-9]+).*$/\1/')
 CheckDeletedFile=$(cat /proc/$ProcessCheck/task/$ProcessCheck/maps | grep deleted | grep mods)
 if [[ $CheckDeletedFile == *'deleted'* ]]; then
-echo -e 'User has been flagged for generic cheat B' >> /tmp/scanresults.txt 
+echo "User has been flagged for generic cheat B" >> /tmp/scanresults.txt
 fi
 # revolutionary linux method, is able to detect any mod cheat if its deleted

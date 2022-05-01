@@ -20,5 +20,5 @@ MCProcess=$(ps -eo pid,comm,lstart,etime,time,args | grep java | grep minecraft 
 MCProcessDate=$(ps -eo pid,lstart | grep $MCProcess | awk '{ print $5 }' | cut -d ':' -f 1-2 | tr -d ":")
 MCModDate=$(stat -c '%y' /home/$CurrentUser/.minecraft/mods | awk '{ print $2 }' | cut -d '.' -f 1 | cut -d ':' -f 1-2 | tr -d ":")
 if [[ $MCModDate > $MCProcessDate ]]; then
-echo -e User has been flagged for generic cheat C >> /tmp/scanresults.txt
+echo "User has been flagged for generic cheat C" >> /tmp/scanresults.txt
 fi

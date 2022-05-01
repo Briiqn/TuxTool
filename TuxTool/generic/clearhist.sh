@@ -18,5 +18,5 @@ CurrentUser=$(users)
 ClearHistory=$(stat -c '%Y' /home/$CurrentUser/.bash_history)
 ComputerStart=$(stat -c '%Y' /dev/null)
 if [[ $ClearHistory > $ComputerStart ]]; then
-echo -e User has been detected for generic cheat D >> /tmp/scanresults.txt
+echo "User has been detected for generic cheat D" >> /tmp/scanresults.txt
 fi

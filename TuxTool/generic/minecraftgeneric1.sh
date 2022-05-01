@@ -17,6 +17,6 @@ SystemBoot=$(stat -c '%Y' /dev/null)
 CurrentUser=$(users)
 MCProcessTime=$(stat -c '%Y' /home/$CurrentUser/.minecraft/launcher_log.txt)
 if [[ $SystemBoot > $MCProcessTime ]]; then
-echo -e User has been detected for Generic cheat A >> /tmp/scanresults.txt
+echo "User has been detected for Generic cheat A" >> /tmp/scanresults.txt
 fi
 # generic to check if the user changed their minecraft directory
