@@ -24,12 +24,15 @@ echo "
 echo checking for compatibility...
 MacOSCheck=/proc/
 Unixcheck=/home/
-sudo rm -R /tmp/scanresults.txt
+sudo chmod ugo+rwx /tmp/scanresults.txt
+rm -R /tmp/scanresults.txt
+touch /tmp/scanresults.txt
+sudo chmod ugo+rwx /tmp/scanresults.txt
 if [ -e "$UnixCheck" ]; then
 echo User is running unix...
 fi 
 if [ -e "$MacOSCheck" ]; then
-echo User is running linux...
+echo User is running $(cat /etc/*-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g')
 else 
 echo User is running MacOS
 fi
@@ -37,14 +40,34 @@ if [ -e "$MacOSCheck" ]; then
 OperatingSystem=$(cat /etc/issue | awk '{ print $1 $2 }')
 fi
 echo Scanning...
+sleep 2
 ScriptDir=$(pwd)
-sudo bash $ScriptDir/check/oscheck.sh
+sleep 1
+echo 0%
 sudo bash $ScriptDir/generic/minecraftgeneric1.sh
-sudo bash $ScriptDir/generic/minecraftgeneric2.sh
-sudo bash $ScriptDir/check/modcheats.sh
-sudo bash $ScriptDir/check/vmcheck.sh
-sudo bash $ScriptDir/generic/minecraftgeneric3.sh
-sudo  bash $ScriptDir/generic/clearhist.sh
+clear
+echo 16.6%
+sleep 1
+bash $ScriptDir/generic/minecraftgeneric2.sh
+clear
+echo 33.2%
+sleep 1
+bash $ScriptDir/check/modcheats.sh
+clear
+echo 49.8%
+sleep 1
+bash $ScriptDir/check/vmcheck.sh
+clear
+echo 66.4%
+sleep 1
+bash $ScriptDir/generic/minecraftgeneric3.sh
+clear
+echo 83%
+sleep 1
+bash $ScriptDir/generic/clearhist.sh
+clear
+echo 100%
 # insert more scripts here
 sleep 5
-sudo cat /tmp/scanresults.txt
+cat /tmp/scanresults.txt
+
