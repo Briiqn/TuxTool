@@ -46,28 +46,41 @@ sleep 1
 echo 0%
 sudo bash $ScriptDir/generic/minecraftgeneric1.sh
 clear
-echo 16.6%
+echo 14.2%
 sleep 1
 bash $ScriptDir/generic/minecraftgeneric2.sh
 clear
-echo 33.2%
+echo 28.5%
 sleep 1
-bash $ScriptDir/check/modcheats.sh
+bash $ScriptDir/check/modcheats.sh & bash $ScriptDir/check/winecheck.sh
 clear
-echo 49.8%
+echo 42.8%
 sleep 1
 bash $ScriptDir/check/vmcheck.sh
 clear
-echo 66.4%
+echo 57.1%
 sleep 1
 bash $ScriptDir/generic/minecraftgeneric3.sh
 clear
-echo 83%
+echo 71.4%
+sleep 1
+bash $ScriptDir/generic/minecraftgeneric4.sh
+clear
+echo 85.7%
 sleep 1
 bash $ScriptDir/generic/clearhist.sh
 clear
 echo 100%
+sleep 0.5
+clear
+echo ___________________
+echo running extra check
+nohup bash $ScriptDir/check/vpncheck.sh
+rm nohup.out
+clear
+echo Done! results are in /tmp/scanresults "(use cat /tmp/scanresults)" to get he output
 # insert more scripts here
 sleep 5
 cat /tmp/scanresults.txt
+exit
 
