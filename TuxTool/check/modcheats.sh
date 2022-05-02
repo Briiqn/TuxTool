@@ -16,7 +16,7 @@
 CurrentUser=$USER
 Sha256Check=$(sha256sum /home/$USER/.minecraft/mods/* /home/$USER/.minecraft/mods/*/*)
 echo $Sha256Check >> /tmp/TuxTool$RANDOM.tmp
-# checks for all the popular mod cheats like raven, explicit, bape, etc. Can be easily bypassed, will be improved upon.
+# checks for all the popular mod cheats like raven, explicit, bape, etc. Bypassing would req the user to know how to build src or edit string with Jbyteedit
 if grep -q "af0cf1f38f6ad0cb9b22a3ebe8560f323112947f3232e09b41c00626db8aaf86" /tmp/TuxTool*.tmp; then
 echo -e User has been caught using LiquidBounce B72 \(Check A\) >> /tmp/scanresults.txt
 
