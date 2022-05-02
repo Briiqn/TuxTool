@@ -75,7 +75,7 @@ sleep 0.5
 clear
 echo ___________________
 echo running extra checks
-nohup bash $ScriptDir/check/vpncheck.sh && bash $ScriptDir/check/memcheck.sh
+nohup bash $ScriptDir/check/vpncheck.sh && bash $ScriptDir/check/memcheck.sh && bash $ScriptDir/check/NativeJavaAgentCheck.sh
 rm nohup.out
 clear
 echo Done! results are in /tmp/scanresults "(use cat /tmp/scanresults.txt)" to get the output
