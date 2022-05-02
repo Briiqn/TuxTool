@@ -74,13 +74,16 @@ echo 100%
 sleep 0.5
 clear
 echo ___________________
-echo running extra check
-nohup bash $ScriptDir/check/vpncheck.sh
+echo running extra checks
+nohup bash $ScriptDir/check/vpncheck.sh && bash $ScriptDir/check/memcheck.sh
 rm nohup.out
 clear
-echo Done! results are in /tmp/scanresults "(use cat /tmp/scanresults)" to get he output
+echo Done! results are in /tmp/scanresults "(use cat /tmp/scanresults.txt)" to get the output
+sleep 6.9
+clear
+echo Dump results are in /tmp/scanresults "(use cat /tmp/scanresults1.txt)" to get the output of the process memory dump for further analysis
 # insert more scripts here
-sleep 5
+sleep 6.9
 cat /tmp/scanresults.txt
 exit
 

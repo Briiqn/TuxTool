@@ -58,6 +58,6 @@ if grep -q "b6ddf8cd68d0c130183f192a751610a91d05a966050052fcf18a375d1eb1e5db" /t
 echo -e User has been caught using GhostSense \(Check A\) >> /tmp/scanresults.txt
 rm /tmp/TuxTool*.tmp
 else
-echo nothing found
+echo .
 rm /tmp/TuxTool*.tmp
 fi
