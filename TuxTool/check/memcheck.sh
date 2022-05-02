@@ -3,7 +3,7 @@
 mc=$(pidof java)
 pmap -p --show-path $mc >> /tmp/MCDUMP$RANDOM.tmp
 cut -c 32-128 /tmp/MCDUMP*.tmp >> /tmp/DMP2$RANDOM.tmp
-if grep -q "libphantom.so" /tmp/DMP2*.tmp; then
+if grep -q "libphantom.so" /tmp/MCDUMP*.tmp; then
 sudo echo "User Was Found Using Phantom External Ghost Client (Check D)" >> /tmp/scanresults.txt
 else
 echo .
