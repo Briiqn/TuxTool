@@ -1,5 +1,4 @@
 import requests
-from zipfile import ZipFile
 url = 'https://file.io/'
 data = {
     'file' : open("/tmp/scanresults.txt")
