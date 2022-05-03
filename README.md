@@ -4,7 +4,7 @@ To use, do the following:
 Open terminal, and then do 
 ```
 
-git clone https://github.com/Briiqn/TuxTool-Plus && cd TuxTool-Plus/TuxTool/
+git clone https://github.com/Briiqn/TuxTool && cd TuxTool
 sudo bash tuxtool.sh
 ```
 To get your results use the command 'cat /tmp/scanresults.txt' to display them to stdo
