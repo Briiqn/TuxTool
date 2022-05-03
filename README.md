@@ -11,3 +11,5 @@ To get your results use the command 'cat /tmp/scanresults.txt' to display them t
 
 note: Self scanning is allowed, and even encouraged. Try to find bugs, bypasses, false flags, or anything you want! 
 Note for current flags: If minecraft isn't running, Generic cheat C will flag, and there might be some errors.
+
+Original >> https://github.com/RuneGaming/TuxTool
