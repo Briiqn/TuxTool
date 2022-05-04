@@ -59,8 +59,72 @@ echo -e User has been caught using Zyklon Web Ghost Client \(Check A\) >> /tmp/s
 fi
 if grep -q "b6ddf8cd68d0c130183f192a751610a91d05a966050052fcf18a375d1eb1e5db" /tmp/TuxTool*.tmp; then
 echo -e User has been caught using GhostSense \(Check A\) >> /tmp/scanresults.txt
+fi
+if grep -q "f10c8c20412fdc89cf861e8aeb325c4dbb8a0e0c0ff9f99f5d62b241788c59f7" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Bape Ghost Client \(Check A\) >> /tmp/scanresults.txt
+fi
+if grep -q "68a675b0d31fe9fe538ed7580f22416bd824518ad17b9d5a69e35b8bc57102c8" /tmp/TuxTool*.tmp; then
+echo -e User has been caught using Vape V3.25 Crack \(Check A\) >> /tmp/scanresults.txt
 rm /tmp/TuxTool*.tmp
 else
 echo .
-rm /tmp/TuxTool*.tmp
 fi
+cd ~/.minecraft/mods/
+for j in *.jar; do unzip -l "$j"; done >> /tmp/jars.TuxTool
+if grep -q "manthe" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A1\) >> /tmp/scanresults.txt
+fi
+if grep -q "Velocity" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A3\) >> /tmp/scanresults.txt
+fi
+if grep -q "AntiKnockback" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A4\) >> /tmp/scanresults.txt
+fi
+if grep -q "Esp" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A5\) >> /tmp/scanresults.txt
+fi
+if grep -q "Reach.class" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A6\) >> /tmp/scanresults.txt
+fi
+if grep -q "Safewalk" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A7\) >> /tmp/scanresults.txt
+fi
+if grep -q "Keepsprint" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A8\) >> /tmp/scanresults.txt
+fi
+if grep -q "AntiBot" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A9\) >> /tmp/scanresults.txt
+fi
+if grep -q "Nametags.class" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A10\) >> /tmp/scanresults.txt
+fi
+if grep -q "Eagle.class" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A10\) >> /tmp/scanresults.txt
+fi
+if grep -q "Spammer" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A11\) >> /tmp/scanresults.txt
+fi
+if grep -q "SelfDestruct" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A12\) >> /tmp/scanresults.txt
+fi
+if grep -q "AutoClicker.class" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A13\) >> /tmp/scanresults.txt
+fi
+if grep -q "Wtap" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A14\) >> /tmp/scanresults.txt
+fi
+if grep -q "ThrowPot" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A15\) >> /tmp/scanresults.txt
+fi
+if grep -q "blatant" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A16\) >> /tmp/scanresults.txt
+fi
+if grep -q "Blatant" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A17\) >> /tmp/scanresults.txt
+fi
+if grep -q "macros" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A18\) >> /tmp/scanresults.txt
+else
+echo .
+fi
+rm /tmp/jars.TuxTool
