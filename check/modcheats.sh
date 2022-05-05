@@ -107,6 +107,9 @@ fi
 if grep -q "SelfDestruct" /tmp/jars.TuxTool; then
 echo -e User Failed Mods Check \(Check A12\) >> /tmp/scanresults.txt
 fi
+if grep -q "Self Destruct" /tmp/jars.TuxTool; then
+echo -e User Failed Mods Check \(Check A12\) >> /tmp/scanresults.txt
+fi
 if grep -q "AutoClicker.class" /tmp/jars.TuxTool; then
 echo -e User Failed Mods Check \(Check A13\) >> /tmp/scanresults.txt
 fi
@@ -128,3 +131,9 @@ else
 echo .
 fi
 rm /tmp/jars.TuxTool
+rm TuxTool*.tmp
+if [ -f /tmp/libJNativeHook*.so ]; then
+echo -e User Failed JNativeHook Check \(Check A19\) >> /tmp/scanresults.txt
+else
+echo .
+fi
