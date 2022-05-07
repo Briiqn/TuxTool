@@ -1,18 +1,10 @@
 #!/bin/bash
-lm=$(date -r /home/$USER/.minecraft/mods/)
-lm1=$(date -r /home/$USER/.minecraft/mods/*)
-gettime1=$(stat -c %Y .)
-gettime2=$(stat -c %Y /home/$USER/.minecraft/mods/)
-gettime3=$(stat -c %Y /home/$USER/.minecraft/mods/*)
-if [ $gettime2 -gt $gettime1 ]; then
-sudo echo "User modified a file in their mods folder after ss tool was installed" >> /tmp/scanresults.txt
-elif [ $gettime3 -gt $gettime1 ]; then
-sudo echo "User modified a file in their mods folder after ss tool was installed" >> /tmp/scanresults.txt
-else
-echo "User Did not touch mods folder after ss tool was installed" >> /tmp/scanresults.txt
-echo "User's mods folder was last modified on" $lm >> /tmp/scanresults.txt
-fi
-if [ -d /home/$USER/.minecraft/mods/* ]; then
-echo "the subdirectories in users mods folders were last modified on" $lm1 >> /tmp/scanresults.txt
-fi
+check1=$(ps -p `pidof java` -o etimes= )
 
+check2=$(expr `date +%s` - `stat -c %Y /home/$USER/.minecraft/mods/*/`)
+
+if [ $check1 -gt $check2 ]; then
+echo "User Modified Mods Folder After Minecraft was launched (Generic 4)" >> /tmp/scanresults.txt
+else
+echo "Minecraft was launched $check1 seconds ago & user""'""s mods folder was last modified" $check2 "seconds ago" >> /tmp/scanresults.txt
+fi
