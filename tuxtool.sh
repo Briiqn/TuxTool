@@ -41,8 +41,7 @@ OperatingSystem=$(cat /etc/issue | awk '{ print $1 $2 }')
 fi
 echo Scanning...
 sleep 2
-cd /tmp/TuxTool-GUI/
-ScriptDir=/tmp/TuxTool-GUI/
+ScriptDir=$(pwd)
 sleep 1
 echo 0%
 sudo bash $ScriptDir/generic/minecraftgeneric1.sh
@@ -89,4 +88,6 @@ echo ____________________________ & python LinkGen.py
 echo ">>>>>>>>>""DONE""<<<<<<<<<"
 echo ____________________________
 rm /tmp/scanresults*.txt
+sleep 15
+read -n 1 -r -s -p $'Press Enter or Space To Close\n'
 

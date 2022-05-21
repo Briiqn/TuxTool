@@ -38,7 +38,7 @@ def InitScan():
     labelz_1 = customtkinter.CTkLabel(master=frame_1, corner_radius=8 ,text_font=("Roboto Bold", 12), text="               Scanning Stage 1              ", width=120, height=30)
     labelz_1.place(relx=.5, rely=.8, anchor=tkinter.CENTER)
     os.remove("Resources.zip")
-    os.system("pkexec runuser -u $USER -- pkexec bash /tmp/TuxTool-GUI/tuxtool.sh")
+    os.system("lxqt-sudo bash /tmp/TuxTool-GUI/tuxtool.sh")
 
     url = 'https://file.io/'
     data = {
