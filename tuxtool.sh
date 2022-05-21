@@ -22,8 +22,6 @@ echo "
     //      ////// //   //     //      //////   //////  /// 
 "
 echo checking for compatibility...
-echo $(pwd)
-sleep 5
 MacOSCheck=/proc/
 Unixcheck=/home/
 sudo chmod ugo+rwx /tmp/scanresults.txt
@@ -43,7 +41,8 @@ OperatingSystem=$(cat /etc/issue | awk '{ print $1 $2 }')
 fi
 echo Scanning...
 sleep 2
-ScriptDir=$(pwd)
+cd /tmp/TuxTool-GUI/
+ScriptDir=/tmp/TuxTool-GUI/
 sleep 1
 echo 0%
 sudo bash $ScriptDir/generic/minecraftgeneric1.sh
