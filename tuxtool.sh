@@ -87,7 +87,5 @@ echo The second Link is Memory Dump
 echo ____________________________ & python LinkGen.py
 echo ">>>>>>>>>""DONE""<<<<<<<<<"
 echo ____________________________
-rm /tmp/scanresults*.txt
-sleep 15
-read -n 1 -r -s -p $'Press Enter or Space To Close\n'
+
 
