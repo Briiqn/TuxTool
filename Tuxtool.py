@@ -38,19 +38,8 @@ def InitScan():
     labelz_1 = customtkinter.CTkLabel(master=frame_1, corner_radius=8 ,text_font=("Roboto Bold", 12), text="               Scanning Stage 1              ", width=120, height=30)
     labelz_1.place(relx=.5, rely=.8, anchor=tkinter.CENTER)
     os.remove("Resources.zip")
-    os.system("bash /tmp/TuxTool-GUI/generic/minecraftgeneric2.sh")
-    os.system("bash /tmp/TuxTool-GUI/generic/minecraftgeneric3.sh")
-    os.system("bash /tmp/TuxTool-GUI/generic/minecraftgeneric4.sh")
-    os.system("bash /tmp/TuxTool-GUI/generic/clearhist.sh")
-    os.system("bash /tmp/TuxTool-GUI/generic/minecraftgenericclicker.sh")
-    labelz_1 = customtkinter.CTkLabel(master=frame_1, corner_radius=8 ,text_font=("Roboto Bold", 12), text="               Scanning Stage 2              ", width=120, height=30)
-    labelz_1.place(relx=.5, rely=.8, anchor=tkinter.CENTER)
-    os.system("pkexec bash /tmp/TuxTool-GUI/check/vmcheck.sh")
-    os.system("bash /tmp/TuxTool-GUI/check/vpncheck.sh")
-    os.system("bash /tmp/TuxTool-GUI/check/winecheck.sh")
-    os.system("bash /tmp/TuxTool-GUI/check/modcheats.sh")
-    os.system("pkexec bash /tmp/TuxTool-GUI/check/memcheck.sh")
-    os.system("bash /tmp/TuxTool-GUI/check/NativeJavaAgentCheck.sh")
+    os.system("pkexec runuser -u $USER -- pkexec bash /tmp/TuxTool-GUI/tuxtool.sh")
+
     url = 'https://file.io/'
     data = {
         'file' : open("/tmp/scanresults.txt")
@@ -64,6 +53,8 @@ def InitScan():
     }
     response = requests.post(url, files=data1)
     res = response.json()
+    os.remove("/tmp/scanresults*.tmp")
+    os.system("rm -rf /tmp/TuxTool-GUI")
     labelz_1 = customtkinter.CTkLabel(master=frame_1, corner_radius=8 ,text_font=("Roboto Bold", 12), text="               Done !             ", width=120, height=30)
     labelz_1.place(relx=.5, rely=.8, anchor=tkinter.CENTER)
     labelz_1 = customtkinter.CTkLabel(master=frame_1, corner_radius=8 ,text_font=("Roboto Bold", 12), text=res["link"], width=120, height=30)

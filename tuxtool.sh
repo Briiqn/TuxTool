@@ -19,7 +19,7 @@ echo "
     /**    /**  /** //***      /**    /**   /**/**   /** /**
     /**    /**  /**  **/**     /**    /**   /**/**   /** /**
     /**    //****** ** //**    /**    //****** //******  ***
-    //      ////// //   //     //      //////   //////  /// 
+    //      ////// //   //     //      //////   //////  ///
 "
 echo checking for compatibility...
 MacOSCheck=/proc/
@@ -30,10 +30,10 @@ touch /tmp/scanresults.txt
 sudo chmod ugo+rwx /tmp/scanresults.txt
 if [ -e "$UnixCheck" ]; then
 echo User is running unix...
-fi 
+fi
 if [ -e "$MacOSCheck" ]; then
 echo User is running $(cat /etc/*-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g')
-else 
+else
 echo User is running MacOS
 fi
 if [ -e "$MacOSCheck" ]; then
@@ -89,6 +89,4 @@ echo ____________________________ & python LinkGen.py
 echo ">>>>>>>>>""DONE""<<<<<<<<<"
 echo ____________________________
 rm /tmp/scanresults*.txt
-sleep 15
-read -n 1 -r -s -p $'Press Enter or Space To Close\n'
 
