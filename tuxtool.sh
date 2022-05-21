@@ -24,10 +24,9 @@ echo "
 echo checking for compatibility...
 MacOSCheck=/proc/
 Unixcheck=/home/
-sudo chmod ugo+rwx /tmp/scanresults.txt
+rm -rf /tmp/TuxTool-GUI*
 rm -R /tmp/scanresults.txt
 touch /tmp/scanresults.txt
-sudo chmod ugo+rwx /tmp/scanresults.txt
 if [ -e "$UnixCheck" ]; then
 echo User is running unix...
 fi 
@@ -44,7 +43,7 @@ sleep 2
 ScriptDir=$(pwd)
 sleep 1
 echo 0%
-sudo bash $ScriptDir/generic/minecraftgeneric1.sh
+bash $ScriptDir/generic/minecraftgeneric1.sh
 clear
 echo 14.2%
 sleep 1
