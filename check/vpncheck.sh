@@ -8,32 +8,32 @@ else
 echo .
 fi
 if pgrep -x openvpn >/dev/null; then
-sudo echo user has openvpn running "(Check C1)" >> /tmp/scanresults.txt
+echo user has openvpn running "(Check C1)" >> /tmp/scanresults.txt
 else
 echo .
 fi
 if pgrep -x Windscribe >/dev/null; then
-sudo echo user has Windscribe VPN running "(Check C2)" >> /tmp/scanresults.txt
+echo user has Windscribe VPN running "(Check C2)" >> /tmp/scanresults.txt
 else
 echo .
 fi
 if pgrep -x riseup-vpn >/dev/null; then
-sudo echo user has Riseup VPN running "(Check C3)" >> /tmp/scanresults.txt
+echo user has Riseup VPN running "(Check C3)" >> /tmp/scanresults.txt
 else
 echo .
 fi
 if pgrep -x protonvpn* >/dev/null; then
-sudo echo user has Proton VPN running "(Check C4)" >> /tmp/scanresults.txt
+echo user has Proton VPN running "(Check C4)" >> /tmp/scanresults.txt
 else
 echo .
 fi
 if pgrep -x vyprvpn >/dev/null; then
-sudo echo user has vyprvpn running "(Check C5)" >> /tmp/scanresults.txt
+echo user has vyprvpn running "(Check C5)" >> /tmp/scanresults.txt
 else
 echo .
 fi
 if pgrep -x nordvpn >/dev/null; then
-sudo echo user has nordvpn running "(Check C6)" >> /tmp/scanresults.txt
+echo user has nordvpn running "(Check C6)" >> /tmp/scanresults.txt
 else
 echo .
 fi
