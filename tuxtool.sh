@@ -22,6 +22,8 @@ echo "
     //      ////// //   //     //      //////   //////  /// 
 "
 echo checking for compatibility...
+echo $(pwd)
+sleep 5
 MacOSCheck=/proc/
 Unixcheck=/home/
 sudo chmod ugo+rwx /tmp/scanresults.txt
