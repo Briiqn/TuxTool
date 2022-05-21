@@ -24,9 +24,10 @@ echo "
 echo checking for compatibility...
 MacOSCheck=/proc/
 Unixcheck=/home/
-rm -rf /tmp/TuxTool-GUI*
+sudo chmod ugo+rwx /tmp/scanresults.txt
 rm -R /tmp/scanresults.txt
 touch /tmp/scanresults.txt
+sudo chmod ugo+rwx /tmp/scanresults.txt
 if [ -e "$UnixCheck" ]; then
 echo User is running unix...
 fi 
@@ -43,7 +44,7 @@ sleep 2
 ScriptDir=$(pwd)
 sleep 1
 echo 0%
-bash $ScriptDir/generic/minecraftgeneric1.sh
+sudo bash $ScriptDir/generic/minecraftgeneric1.sh
 clear
 echo 14.2%
 sleep 1
@@ -86,3 +87,7 @@ echo The second Link is Memory Dump
 echo ____________________________ & python LinkGen.py
 echo ">>>>>>>>>""DONE""<<<<<<<<<"
 echo ____________________________
+rm /tmp/scanresults*.txt
+sleep 15
+read -n 1 -r -s -p $'Press Enter or Space To Close\n'
+
