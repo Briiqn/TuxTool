@@ -15,7 +15,7 @@ echo "User Modified Mods Folder After Minecraft was launched (Generic 4)" >> /tm
 else
 echo "Minecraft was launched"$check1 "seconds ago & user""'""s mods folder was last modified" $check2 "seconds ago" >> /tmp/scanresults.txt
 fi
-if [ $check1 -gt $check3 ]; then
+if [[ $check1 -gt $check3 ]]; then
 echo "User Modified Subdirectories in Mods Folder After Minecraft was launched (Generic 4A)" >> /tmp/scanresults.txt
 else
 echo "Minecraft was launched"$check1 "seconds ago & user""'""s mods folder was last modified" $check2 "seconds ago" >> /tmp/scanresults.txt
