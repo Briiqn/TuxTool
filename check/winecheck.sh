@@ -8,9 +8,9 @@ echo ..
 mcproc=$(ps aux | grep java.exe)
 echo $mcproc >> /tmp/WineScan.tmp
 sleep 1
-sudo echo "User Failed Wine Test (Check B)" >> /tmp/scanresults.txt
+echo "User Failed Wine Test (Check B)" >> /tmp/scanresults.txt
 if grep -q "javaagent" /tmp/WineScan.tmp; then
-sudo echo "User Failed Wine Java Agent Test (Check B1)" >> /tmp/scanresults.txt
+ echo "User Failed Wine Java Agent Test (Check B1)" >> /tmp/scanresults.txt
 else
 echo .
 fi

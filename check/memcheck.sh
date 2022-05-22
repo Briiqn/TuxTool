@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo rm /tmp/MCDUMP*.tmp
-sudo rm /tmp/DMP*.tmp
+rm /tmp/MCDUMP*.tmp
+rm /tmp/DMP*.tmp
 rm /tmp/javaStrings.tmp
 mc=$(pidof java)
 pmap -p --show-path $mc >> /tmp/MCDUMP$RANDOM.tmp
@@ -34,6 +34,6 @@ echo "User was found using Phantom Ghost Client (Check D)" >> /tmp/scanresults.t
 else
 echo .
 fi
-sudo rm /tmp/MCDUMP*.tmp
-sudo rm /tmp/DMP*.tmp
+rm /tmp/MCDUMP*.tmp
+rm /tmp/DMP*.tmp
 rm /tmp/javaStrings.tmp
