@@ -1,8 +1,8 @@
 #!/bin/bash
 check1=$(ps -p `pidof java` -o etimes= )
 
-check2=$(expr `date +%s` - `stat -c %Y /home/{*}/.minecraft/mods/*`)
-check3=$(expr `date +%s` - `stat -c %Y /home/{*}/.minecraft/mods/*/*`)
+check2=$(expr `date +%s` - `stat -c %Y /home/$(whoami)/.minecraft/mods/`)
+check3=$(expr `date +%s` - `stat -c %Y /home/$(whoami)/.minecraft/mods//`)
 
 if [ $check2 == ]; then
 check2=$(echo "ERROR")
